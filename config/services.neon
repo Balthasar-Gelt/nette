@@ -1,0 +1,12 @@
+services:
+	- App\Core\RouterFactory::createRouter
+	- App\Repository\PetRepository
+	- App\Storage\XMLStorageManager(filePath: '%appDir%/Data/pets.xml')
+	- App\Components\Pet\Form\Add\ComponentFactory
+	- App\Components\Pet\Form\Edit\ComponentFactory
+
+search:
+	-	in: %appDir%
+		classes:
+			- *Factory
+			- *Facade
